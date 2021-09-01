@@ -1,44 +1,44 @@
-//#include<iostream>
-//#include<vector>
-//#include<algorithm>
-//#include<cstring>
-//
-//
-//using namespace std;
-//
-//long long arr[10001];
-//
-//long long cnt = 0;
-//long long k, n, high, low = 1, middle = 0, result = 0;
-//
-//
-//int main() {
-//	cin >> k >> n;
-//
-//	for (int i = 0; i < k; i++) {
-//		cin >> arr[i];
-//		high = max(high, arr[i]);
-//	}
-//	while (low <= high) {
-//		result = 0;
-//		middle = (low + high) / 2;                       //Áß¾Ó°ª ¸¸µé±â 1+high ¿¡ ÇÕ
-//
-//		for (int i = 0; i < k; i++)
-//			result += arr[i] / middle;                   //ÀÔ·Â¹ŞÀº °ªÀ» Áß¾Ó°ªÀ¸·Î ³»¸°´Ù.
-//
-//		if (result >= n) {                              //¸¸¾à °á°ú °ªÀÌ ·£¼­ÀÇ °¹¼öº¸´Ù ³ô´Ù¸é
-//			low = middle + 1;                          //°¡Àå ³·Àº °ªÀº Áß¾Ó°ª°ú °°´Ù
-//			if (middle > cnt) {                        // cnt °ªÀÌ ¹Ìµéº¸´Ù Å©¸é (0º¸´Ù Å©¸é?)
-//				cnt = middle;                         //Ä«¿îÆ®¸¦ ¾÷!
-//			}
-//		}
-//		else {
-//			high = middle - 1;                       //±×¿ÜÀÇ °æ¿ì¶ó¸é Áß¾Ó°ªÀÌ ÃÖ°í°ªÀÌ µÈ´Ù.
-//		}
-//
-//	}                                                  //low °ªÀÌ high °ªÀÌ µÉ‹š±îÁö ¹İº¹
-//	        
-//	cout << cnt << endl;
-//
-//	return 0;
-//}
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<cstring>
+
+
+using namespace std;
+
+long long arr[10001];
+
+long long cnt = 0;
+long long k, n, high, low = 1, middle = 0, result = 0;
+
+
+int main() {
+	cin >> k >> n;
+
+	for (int i = 0; i < k; i++) {
+		cin >> arr[i];
+		high = max(high, arr[i]);
+	}
+	while (low <= high) {
+		result = 0;
+		middle = (low + high) / 2;                       //ì¤‘ì•™ê°’ ë§Œë“¤ê¸° 1+high ì— í•©
+
+		for (int i = 0; i < k; i++)
+			result += arr[i] / middle;                   //ì…ë ¥ë°›ì€ ê°’ì„ ì¤‘ì•™ê°’ìœ¼ë¡œ ë‚´ë¦°ë‹¤.
+
+		if (result >= n) {                              //ë§Œì•½ ê²°ê³¼ ê°’ì´ ëœì„œì˜ ê°¯ìˆ˜ë³´ë‹¤ ë†’ë‹¤ë©´
+			low = middle + 1;                          //ê°€ì¥ ë‚®ì€ ê°’ì€ ì¤‘ì•™ê°’ê³¼ ê°™ë‹¤
+			if (middle > cnt) {                        // cnt ê°’ì´ ë¯¸ë“¤ë³´ë‹¤ í¬ë©´ (0ë³´ë‹¤ í¬ë©´?)
+				cnt = middle;                         //ì¹´ìš´íŠ¸ë¥¼ ì—…!
+			}
+		}
+		else {
+			high = middle - 1;                       //ê·¸ì™¸ì˜ ê²½ìš°ë¼ë©´ ì¤‘ì•™ê°’ì´ ìµœê³ ê°’ì´ ëœë‹¤.
+		}
+
+	}                                                  //low ê°’ì´ high ê°’ì´ ë Â‹Âšê¹Œì§€ ë°˜ë³µ
+	        
+	cout << cnt << endl;
+
+	return 0;
+}
