@@ -10,7 +10,7 @@ int main() {
 	int cnt = 0;
 	while (1)
 	{
-		//숫자 666이 연속되는지 확인
+		
 		for (int i = val; i >= 666; i /= 10)
 		{
 			if (i % 1000 == 666)
